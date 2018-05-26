@@ -69,7 +69,7 @@ Each component name must be:
 
 * **Meaningful**: not over specific, not overly abstract.
 * **Short**: 2 or 3 words.
-* **Pronounceable**: we want to be able talk about them.
+* **Pronounceable**: we want to be able to talk about them.
 
 Vue component names must also be:
 
@@ -166,11 +166,11 @@ Use a component attribute per props, with a primitive or function as value:
 <!-- recommended -->
 <range-slider
   :values="[10, 20]"
-  min="0"
-  max="100"
-  step="5"
-  :on-slide="updateInputs"
-  :on-end="updateResults">
+  :min="0"
+  :max="100"
+  :step="5"
+  @on-slide="updateInputs"
+  @on-end="updateResults">
 </range-slider>
 
 <!-- avoid -->
@@ -561,7 +561,7 @@ Linters improve code consistency and help trace syntax errors. .vue files can be
 
 ### How?
 
-To allow linters to extract the scripts from your `*.vue` files, [put script inside a `<script>` component](#use-script-inside-component) and [keep component expressions simple](#keep-component-expressions-simple) (as linters don't understand those). Configure your linter to allow global variables `vue` and component `props`.
+To allow linters to extract the scripts from your `*.vue` files, put script inside a `<script>` component and [keep component expressions simple](#keep-component-expressions-simple) (as linters don't understand those). Configure your linter to allow global variables `vue` and component `props`.
 
 #### ESLint
 
